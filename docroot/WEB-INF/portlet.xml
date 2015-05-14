@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+<portlet-app
+	version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+>
+	<portlet>
+            <portlet-name>mpi-portlet</portlet-name>
+            <display-name>mpi-portlet</display-name>
+            <portlet-class>it.infn.ct.mpi_portlet</portlet-class>
+            <!--
+            <init-param>    
+                <name>init_PortletVersion</name>
+                <value>Specify your Portlet' version number</value>
+            </init-param>
+            <init-param>    
+                <name>init_bdiiHost</name>
+                <value>Specify your VO' top BDII here</value>
+            </init-param>
+            <init-param>    
+                <name>init_wmsHost</name>
+                <value>Specify your VO' top WMS here</value>
+            </init-param>
+            <init-param>
+                <name>init_pxServerHost</name>
+                <value>Specify your proxy robot' Server hostname</value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotId</name>
+                <value>Specify your proxy robot' Id</value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotVO</name>
+                <value>Specify your proxy robot' Virtual Organization</value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotRole</name>
+                <value>Specify your proxy robot' Role</value>
+            </init-param>
+            <init-param>
+                <name>init_pxUserProxy</name>
+                <value>Specify the complete path to your user proxy</value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotRenewalFlag</name>
+                <value>true</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyAppId</name>
+                <value>9</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Hostname</name>
+                <value>localhost</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Username</name>
+                <value>tracking_user</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Password</name>
+                <value>usertracking</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Database</name>
+                <value>userstracking</value>
+            </init-param> 
+            <init-param>    
+                <name>init_JobRequirements</name>
+                <value>Provide your job requirements here
+                More requirements can be provided in new lines
+                </value>
+            </init-param>
+            -->
+        
+            <init-param>    
+                <name>init_PortletVersion</name>
+                <value>1.0.1</value>
+            </init-param>            
+            <init-param>    
+                <name>init_bdiiHost</name>
+                <value>ldap://bdii.eumedgrid.eu:2170</value>
+            </init-param>
+            <init-param>    
+                <name>init_wmsHost</name>
+                <value></value>
+            </init-param>
+            <init-param>
+                <name>init_pxServerHost</name>
+                <value>myproxy.ct.infn.it</value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotId</name>
+                <value>21057</value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotVO</name>
+                <value>eumed</value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotRole</name>
+                <value>eumed</value>
+            </init-param>
+            <init-param>
+                <name>init_pxUserProxy</name>
+                <value></value>
+            </init-param>
+            <init-param>
+                <name>init_pxRobotRenewalFlag</name>
+                <value>true</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyAppId</name>
+                <value>9</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Hostname</name>
+                <value>localhost</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Username</name>
+                <value>tracking_user</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Password</name>
+                <value>usertracking</value>
+            </init-param>
+            <init-param>
+                <name>init_SciGwyUserTrackingDB_Database</name>
+                <value>userstracking</value>
+            </init-param>
+            <init-param>    
+                <name>init_JobRequirements</name>
+                <value>
+                    Member("MPI-START", other.GlueHostApplicationSoftwareRunTimeEnvironment);
+                    Member("MPICH", other.GlueHostApplicationSoftwareRunTimeEnvironment)
+                </value>
+            </init-param>            
+            <init-param>    
+                <name>init_pilotScript</name>
+                <value>Paste here your pilot script</value>
+            </init-param>
+            
+	<expiration-cache>0</expiration-cache>
+	<supports>
+		<mime-type>text/html</mime-type>
+		<portlet-mode>view</portlet-mode>
+		<portlet-mode>edit</portlet-mode>
+		<portlet-mode>help</portlet-mode>
+	</supports>
+        <portlet-info>
+            <title>mpi-portlet</title>
+            <short-title>mpi-portlet</short-title>
+            <keywords>mpi-portlet</keywords>
+            </portlet-info>
+            <security-role-ref>
+            <role-name>administrator</role-name>
+            </security-role-ref>
+            <security-role-ref>
+            <role-name>guest</role-name>
+            </security-role-ref>
+            <security-role-ref>
+            <role-name>power-user</role-name>
+            </security-role-ref>
+            <security-role-ref>
+            <role-name>user</role-name>
+            </security-role-ref>
+    </portlet>
+</portlet-app>
